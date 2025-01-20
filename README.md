@@ -1,21 +1,15 @@
 # VNC-iPad
-A Lightweight, Ready-to-Use Web Browsing Environment in Docker with VNC Access
+Give your old iPad a new life as a remote for home assistant!
 
-## Info :information_source:
-VNC-ipad is a minimal Docker image designed to provide a lightweight environment for browsing the web via VNC.
-This Docker image encapsulates a lightweight, VNC-accessible Chromium web browser starting in kiosk mode.
-It allows to use old iPad as a remote for home assistant (native outdated safari browser of old ipad is unusable for this purporse).
-You should install any vnc viewer on ipad (available on all versions of ipad)
+## Info ℹ️
+Old iPads come with an outdated version of Safari, which makes them unusable with modern Home Assistant dashboards.
 
-**Key Features ✨**
-
-- **VNC-Ready**: Ready for use with any VNC client or through a web browser using noVNC, offering a user-friendly interface.
-- **Lightweight**: Built on Alpine Linux and Debian Slim, ensuring minimal resource usage.
-- **Customizable**: Set VNC password, initial website URL, auto-start settings for the browser and xterm via environment variables.
-- **Accessible**: Access the VNC server directly or through a browser using noVNC.
+**VNC-iPad** enables you to use your old iPad as a remote for Home Assistant. The outdated Safari browser on old iPads is not suitable for this purpose.
 
 ## Quick Start 🚀
-You can run it easily using its default or by passing the appropriate environment variables.
+1. Install any VNC viewer on the iPad (available for all iPad versions)
+2. Start this docker container (see bellow)
+3. Point your VNC viewer on iPad to container_ip:5900
 
 - ### Docker CLI 🐳
   ```bash
@@ -47,9 +41,8 @@ You can customize the settings of the Docker container by passing environment va
 
 - Example:
 ```sh
-docker run -d -p 5900:5900 -e STARTING_WEBSITE_URL="https://www.google.com" -e VNC_PASSWORD="mypassword" -e VNC_RESOLUTION="1920x1080" -e ddayb/vnc-ipad```
-
----
+docker run -d -p 5900:5900 -e STARTING_WEBSITE_URL="https://www.google.com" -e VNC_PASSWORD="mypassword" -e VNC_RESOLUTION="1920x1080" -e ddayb/vnc-ipad
+```
 
 ### :warning: Disclaimer
 This project and its artifacts are provided "as is" and without warranty of any kind.
